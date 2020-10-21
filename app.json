@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "mobile_good_morning_news",
+    "slug": "mobile_good_morning_news",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
