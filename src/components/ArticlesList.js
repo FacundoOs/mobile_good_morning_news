@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Text, View } from "react-native";
+import Articles from "../modules/articles";
 
 const ArticlesList = () => {
-  const [articles, setArticles] = useState();
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const getArticles = async () => {
       const response = await Articles.index();
-        setArticles(response);
-      
+      setArticles(response);
     };
     getArticles();
   }, []);
 
   return (
     <View>
-      <Text>Jenny is cool</Text>
+      {articles.map((article) => {
+        return (
+          <View key={article.id}>
+            <Text>{article.title}</Text>
+            <Text>{article.category}</Text>
+          </View>
+        );
+      })}
     </View>
   );
 };
