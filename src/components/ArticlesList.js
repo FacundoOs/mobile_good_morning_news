@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import Articles from "../modules/articles";
+import ListItem from "./ListItem";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -15,14 +16,14 @@ const ArticlesList = () => {
 
   return (
     <View style={styles.container}>
-      {articles.map((article) => {
-        return (
-          <View  key={article.id}>
-            <Text>{article.title}</Text>
-            <Text>{article.category}</Text>
-          </View>
-        );
-      })}
+      <Text>Hello</Text>
+      <FlatList
+        data={articles}
+        keyExtractor={(article) => article.id.toString()}
+        renderItem={({ item }) => {
+          return <ListItem article={item} />;
+        }}
+      />
     </View>
   );
 };
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    marginTop: "20%"
+    marginTop: "20%",
   },
 });
 
