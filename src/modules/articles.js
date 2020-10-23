@@ -5,11 +5,9 @@ const Articles = {
     let response;
     try {
       const result = await axios.get(`/articles`);
-      response = result.data.articles;
+      return (response = result.data.articles);
     } catch (error) {
-      response = error.response.data.error_message;
-    } finally {
-      return response;
+      console.log(error);
     }
   },
 };
