@@ -28,13 +28,14 @@ export default ListItem;
 
 const styles = StyleSheet.create({
   card: {
+    position: "absolute",
     width: Dimensions.get("window").width,
     paddingTop: 8,
     paddingLeft: 10,
     paddingRight: 8,
     paddingBottom: 16,
     top: 8,
-    backgroundColor: "rgba(0,0,0,0.85)",
+    backgroundColor: "rgba(0,0,0,0.3)",
   },
   title: {
     color: "white",

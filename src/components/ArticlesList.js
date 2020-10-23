@@ -16,7 +16,6 @@ const ArticlesList = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Hello</Text>
       <FlatList
         data={articles}
         keyExtractor={(article) => article.id.toString()}
