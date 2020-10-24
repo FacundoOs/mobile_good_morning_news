@@ -1,10 +1,19 @@
 import React from "react";
 import ArticlesList from "./src/components/ArticlesList";
+import SpecificArticle from "./src/components/SpecificArticle";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <ArticlesList/>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="ArticlesList" component={ArticlesList} />
+        <Stack.Screen name="SpecificArticle" component={SpecificArticle} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

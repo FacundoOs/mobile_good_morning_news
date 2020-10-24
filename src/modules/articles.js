@@ -10,5 +10,16 @@ const Articles = {
       console.log(error);
     }
   },
+  async show(articleId) {
+    try {
+      const result = await axios.get(`/articles/${articleId}`, {
+        headers: getAuthHeaders(),
+      });
+
+      return result.data.article;
+    } catch (error) {
+      return error.response.data.error;
+    }
+  },
 };
 export default Articles;

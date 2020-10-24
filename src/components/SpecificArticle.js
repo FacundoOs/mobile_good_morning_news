@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Articles from "../modules/articles";
+import { Text, View, Image} from "react-native";
+
 
 const SpecificArticle = () => {
   const [article, setArticle] = useState({});
@@ -20,9 +21,9 @@ const SpecificArticle = () => {
   }, [id]);
 
   return (
-    <>
-   
-    </>
+    <View>
+   <Text>test</Text>
+    </View>
   );
 };
 export default SpecificArticle;
