@@ -1,14 +1,20 @@
 import React from "react";
-import { View, StyleSheet, Text, Dimensions, Image } from "react-native";
+import { View, StyleSheet, Text, Dimensions, Image, TouchableHighlight } from "react-native";
 
 const ListItem = (props) => {
+  const _onPressButton = () => {
+    alert("Thanks !")
+  }
   return (
     <View>
+      <TouchableHighlight onPress={_onPressButton} underlayColor="white">
       <Image
         source={{ uri: props.article.image }}
         style={styles.image}
         testID={`article-image-${props.article.id}`}
-      />
+        
+        />
+        </TouchableHighlight>
       <View style={styles.card}>
         <Text style={styles.title} id={`article-title-${props.article.id}`}>
           {props.article.title}
@@ -23,6 +29,12 @@ const ListItem = (props) => {
     </View>
   );
 };
+
+
+
+
+
+
 
 export default ListItem;
 

@@ -11,6 +11,7 @@ const ArticlesList = () => {
       const response = await Articles.index();
       setArticles(response);
     };
+    
     getArticles();
   }, []);
 
