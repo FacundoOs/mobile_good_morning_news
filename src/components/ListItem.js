@@ -2,12 +2,20 @@ import React from "react";
 import { View, StyleSheet, Text, Dimensions, Image, TouchableHighlight } from "react-native";
 
 const ListItem = (props) => {
-  const _onPressButton = () => {
-    alert("Thanks !")
-  }
+  
   return (
     <View>
-      <TouchableHighlight onPress={_onPressButton} underlayColor="white">
+      <TouchableHighlight
+        testID={`article-${props.article.id}`}
+        key={props.article.id}
+        underlayColor = "white"
+        onPress={() => {
+          props.navigation.navigate("Specific Article", {
+            articleId: props.article.id,
+          });
+        }}
+      >
+      
       <Image
         source={{ uri: props.article.image }}
         style={styles.image}

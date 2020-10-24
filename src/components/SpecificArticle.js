@@ -3,10 +3,9 @@ import Articles from "../modules/articles";
 import { Text, View, Image} from "react-native";
 
 
-const SpecificArticle = () => {
+const SpecificArticle = ({id}) => {
   const [article, setArticle] = useState({});
   const [message, setMessage] = useState("");
-  const { id } = useParams();
 
   useEffect(() => {
     const getSingleArticle = async () => {
