@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Articles from "../modules/articles";
-import { Text, View, Image, StyleSheet, Dimensions } from "react-native";
+import { Text, View, Image, StyleSheet, Dimensions, Button, Modal } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 const SpecificArticle = ({ route }) => {
   const [article, setArticle] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const getSingleArticle = async () => {
@@ -28,6 +29,22 @@ const SpecificArticle = ({ route }) => {
           <View style={styles.divider}></View>
           <Text style={styles.content}>{article.content}</Text>
         </View>
+        <View>
+          <Button title="Continue Reading" onPress={()=>{setShowModal(true)}}/>
+          <Modal transparent={true} visible={showModal}>
+            <View style={{backgroundColor:"#00000aa", flex:1}}>
+              <View style={{backgroundColor:"#ffffff", margin:50,padding:40,borderRadius:10, flex:1}}>
+              <Text style={{ fontSize: 50 }}>Something</Text>
+              <Button title="Continue Reading" onPress={()=>{setShowModal(false)}}/>
+              </View>
+            </View>
+            <Text>
+              Continue Reading
+            </Text>
+
+          </Modal>
+        </View>
+
       </View>
     </ScrollView>
   );
