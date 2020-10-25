@@ -1,14 +1,31 @@
 import React from "react";
-import { View, StyleSheet, Text, Dimensions, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Dimensions,
+  Image,
+  TouchableHighlight,
+} from "react-native";
 
 const ListItem = (props) => {
   return (
     <View>
-      <Image
-        source={{ uri: props.article.image }}
-        style={styles.image}
-        testID={`article-image-${props.article.id}`}
-      />
+      <TouchableHighlight
+        key={props.article.id}
+        underlayColor="white"
+        onPress={() => {
+          props.navigation.navigate("Back", {
+            articleId: props.article.id,
+          });
+        }}
+      >
+        <View>
+        <Image
+          source={{ uri: props.article.image }}
+          style={styles.image}
+        />
+
       <View style={styles.card}>
         <Text style={styles.title} id={`article-title-${props.article.id}`}>
           {props.article.title}
@@ -20,6 +37,8 @@ const ListItem = (props) => {
           {props.article.category}
         </Text>
       </View>
+      </View>
+      </TouchableHighlight>
     </View>
   );
 };
