@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Articles from "../modules/articles";
 import { Text, View, Image, StyleSheet, Dimensions } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const SpecificArticle = ({ route }) => {
   const [article, setArticle] = useState({});
@@ -18,7 +19,7 @@ const SpecificArticle = ({ route }) => {
   }, [route]);
 
   return (
-    <View>
+    <ScrollView>
       <View key={article.id}>
           <Text style={styles.title}>{article.title}</Text>
         <Image style={styles.image} source={{ uri: article.image }} />
@@ -28,7 +29,7 @@ const SpecificArticle = ({ route }) => {
           <Text style={styles.content}>{article.content}</Text>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 export default SpecificArticle;
