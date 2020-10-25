@@ -21,23 +21,20 @@ const ListItem = (props) => {
         }}
       >
         <View>
-        <Image
-          source={{ uri: props.article.image }}
-          style={styles.image}
-        />
+          <Image source={{ uri: props.article.image }} style={styles.image} />
 
-      <View style={styles.card}>
-        <Text style={styles.title} id={`article-title-${props.article.id}`}>
-          {props.article.title}
-        </Text>
-        <Text
-          id={`article-category-${props.article.id}`}
-          style={styles.category}
-        >
-          {props.article.category}
-        </Text>
-      </View>
-      </View>
+          <View style={styles.card}>
+            <Text style={styles.title} id={`article-title-${props.article.id}`}>
+              {props.article.title}
+            </Text>
+            <Text
+              id={`article-category-${props.article.id}`}
+              style={styles.category}
+            >
+              {props.article.category}
+            </Text>
+          </View>
+        </View>
       </TouchableHighlight>
     </View>
   );
@@ -57,11 +54,11 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.3)",
   },
   title: {
-    color: "white",
+    color: "#ffffff",
     fontSize: 26,
   },
   category: {
-    color: "white",
+    color: "#ffffff",
     fontSize: 14,
   },
   image: {
