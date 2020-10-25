@@ -12,7 +12,6 @@ const ListItem = (props) => {
   return (
     <View>
       <TouchableHighlight
-        testID={`article-${props.article.id}`}
         key={props.article.id}
         underlayColor="white"
         onPress={() => {
@@ -21,12 +20,12 @@ const ListItem = (props) => {
           });
         }}
       >
+        <View>
         <Image
           source={{ uri: props.article.image }}
           style={styles.image}
-          testID={`article-image-${props.article.id}`}
         />
-      </TouchableHighlight>
+
       <View style={styles.card}>
         <Text style={styles.title} id={`article-title-${props.article.id}`}>
           {props.article.title}
@@ -38,6 +37,8 @@ const ListItem = (props) => {
           {props.article.category}
         </Text>
       </View>
+      </View>
+      </TouchableHighlight>
     </View>
   );
 };
