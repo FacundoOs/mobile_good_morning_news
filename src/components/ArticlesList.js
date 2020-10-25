@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Image, FlatList } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import Articles from "../modules/articles";
 import ListItem from "./ListItem";
 
-const ArticlesList = () => {
+const ArticlesList = ({ navigation }) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const ArticlesList = () => {
       const response = await Articles.index();
       setArticles(response);
     };
-    
+
     getArticles();
   }, []);
 
@@ -21,7 +21,7 @@ const ArticlesList = () => {
         data={articles}
         keyExtractor={(article) => article.id.toString()}
         renderItem={({ item }) => {
-          return <ListItem article={item} />;
+          return <ListItem article={item} navigation={navigation} />;
         }}
       />
     </View>

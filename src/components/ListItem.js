@@ -1,28 +1,32 @@
 import React from "react";
-import { View, StyleSheet, Text, Dimensions, Image, TouchableHighlight } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Dimensions,
+  Image,
+  TouchableHighlight,
+} from "react-native";
 
 const ListItem = (props) => {
-  
   return (
     <View>
       <TouchableHighlight
         testID={`article-${props.article.id}`}
         key={props.article.id}
-        underlayColor = "white"
+        underlayColor="white"
         onPress={() => {
-          props.navigation.navigate("Specific Article", {
+          props.navigation.navigate("SpecificArticle", {
             articleId: props.article.id,
           });
         }}
       >
-      
-      <Image
-        source={{ uri: props.article.image }}
-        style={styles.image}
-        testID={`article-image-${props.article.id}`}
-        
+        <Image
+          source={{ uri: props.article.image }}
+          style={styles.image}
+          testID={`article-image-${props.article.id}`}
         />
-        </TouchableHighlight>
+      </TouchableHighlight>
       <View style={styles.card}>
         <Text style={styles.title} id={`article-title-${props.article.id}`}>
           {props.article.title}
@@ -37,12 +41,6 @@ const ListItem = (props) => {
     </View>
   );
 };
-
-
-
-
-
-
 
 export default ListItem;
 

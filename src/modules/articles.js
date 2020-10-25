@@ -12,10 +12,7 @@ const Articles = {
   },
   async show(articleId) {
     try {
-      const result = await axios.get(`/articles/${articleId}`, {
-        headers: getAuthHeaders(),
-      });
-
+      const result = await axios.get(`/articles/${articleId}`);
       return result.data.article;
     } catch (error) {
       return error.response.data.error;
