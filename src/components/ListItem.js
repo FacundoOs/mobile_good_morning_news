@@ -16,7 +16,7 @@ const ListItem = (props) => {
         key={props.article.id}
         underlayColor="white"
         onPress={() => {
-          props.navigation.navigate("SpecificArticle", {
+          props.navigation.navigate("Back", {
             articleId: props.article.id,
           });
         }}

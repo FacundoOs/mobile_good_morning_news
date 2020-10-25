@@ -20,11 +20,12 @@ const SpecificArticle = ({ route }) => {
   return (
     <View>
       <View key={article.id}>
+          <Text style={styles.title}>{article.title}</Text>
         <Image style={styles.image} source={{ uri: article.image }} />
         <View style={styles.contentContainer}>
-          <Text style={styles.title}>{article.title}</Text>
-          <Text style={styles.subtitle}>{article.teaser}</Text>
-          <Text style={styles.subtitle}>{article.content}</Text>
+          <Text style={styles.teaser}>{article.teaser}</Text>
+          <View style={styles.divider}></View>
+          <Text style={styles.content}>{article.content}</Text>
         </View>
       </View>
     </View>
@@ -36,30 +37,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  contentContainer: {
-    marginLeft: 5,
-    marginRight: 5,
-  },
-  card: {
-    position: "relative",
-    width: Dimensions.get("window").width,
-    padding: 7,
-    paddingLeft: 10,
-    paddingRight: 8,
-    bottom: 8,
-    backgroundColor: "rgba(0,0,0,0.3)",
-  },
+
   title: {
-    color: "grey",
-    fontSize: 26,
+    color: "black",
+    fontSize: 34,
+    fontWeight:"bold",
+    paddingHorizontal: 10,
+    textTransform: "capitalize"
+    
   },
-  subtitle: {
+  content: {
     color: "grey",
-    fontSize: 14,
+    fontSize: 20,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
   },
   image: {
     height: 250,
     width: Dimensions.get("window").width,
     marginBottom: 15,
+    
   },
+  teaser: {
+    color:"black",
+    fontWeight:"bold",
+    fontSize:20,
+    paddingHorizontal: 10,
+  },
+  divider: {
+    borderWidth: 0.5,
+    borderColor: "grey",
+    margin:10
+  }
 });
