@@ -3,6 +3,7 @@ import ArticlesList from "./src/components/ArticlesList";
 import SpecificArticle from "./src/components/SpecificArticle";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import Login from './src/components/Login.jsx'
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={myOptions}>
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Articles" component={ArticlesList} />
         <Stack.Screen name="Back" component={SpecificArticle} />
       </Stack.Navigator>
