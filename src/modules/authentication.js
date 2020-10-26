@@ -1,7 +1,7 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-community/async-storage";
 const apiUrl =
-  proccess.env.NODE_ENV === "development" && "http://localhost:3000";
+  process.env.NODE_ENV === "development" && "http://localhost:3000/api/v1";
 const defaultOptions = {
   host: apiUrl,
   mode: "local",
